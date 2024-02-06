@@ -1,7 +1,9 @@
-package model;
+package br.edu.infnet.gestao_comanda.model;
 import lombok.*;
 
-@Data@AllArgsConstructor@NoArgsConstructor@Builder
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Sobremesa extends Produto{
 	
 	private String informacao;
