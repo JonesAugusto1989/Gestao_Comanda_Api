@@ -1,12 +1,12 @@
 package model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 
 
-@Getter
-@Setter
-public class Comida{
+@Data@AllArgsConstructor@Builder
+public class Comida extends Produto{
    private float peso;
    private boolean vegano;
    private String ingredientes;
