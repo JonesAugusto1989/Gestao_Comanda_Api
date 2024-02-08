@@ -1,5 +1,6 @@
 package br.edu.infnet.gestao_comanda.model;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -9,19 +10,26 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
-
+@ToString
 @EqualsAndHashCode
 @NoArgsConstructor
 public class Comanda {
 	
+
+
 	private Long numero;
 	
 	public Comanda(Long numero) {
 		super();
 		this.numero = numero;
 		this.pedidos = new ArrayList<Pedido>();
+		this.dataAbertura = LocalDateTime.now();
 	}
+	
+	private LocalDateTime dataAbertura;
+	private LocalDateTime dataFechamento;
 	
 	@Getter
 	@Setter
@@ -54,5 +62,11 @@ public class Comanda {
 		return Optional.empty();
 			
 	}
+	
+	public void fechaComanda() {
+		dataFechamento = LocalDateTime.now();
+	}
+	
+	
 
 }
