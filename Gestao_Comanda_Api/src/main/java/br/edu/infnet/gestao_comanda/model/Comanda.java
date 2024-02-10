@@ -13,17 +13,14 @@ import lombok.Setter;
 import lombok.ToString;
 
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor
 public class Comanda {
 	
-
-
-	private Long numero;
 	
 	public Comanda(Long numero) {
 		super();
-		this.numero = numero;
+		this.id = numero;
 		this.pedidos = new ArrayList<Pedido>();
 		this.dataAbertura = LocalDateTime.now();
 	}
@@ -33,6 +30,7 @@ public class Comanda {
 	
 	@Getter
 	@Setter
+	@EqualsAndHashCode.Include
 	private Long id;
 	
 	@Getter

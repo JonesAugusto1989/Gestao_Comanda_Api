@@ -5,11 +5,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
+import br.edu.infnet.gestao_comanda.exceptions.ComandaException;
 import br.edu.infnet.gestao_comanda.model.Comanda;
 
 public class ComandaDAO {
 	
-	private static List comandas;
+	private static List<Comanda> comandas;
 	private static Long id;
 	
 	public ComandaDAO() {
@@ -37,8 +38,29 @@ public class ComandaDAO {
 		
 		return Optional.of(comandas);
 	}
+	public Comanda fecharComanda(Comanda comanda) throws ComandaException {
+		if(comandas.contains(comanda)) {
+			int posicao = comandas.indexOf(comanda);
+			comandas.get(posicao).fechaComanda();
+			return comandas.get(posicao);
+		}
+		
+		throw new ComandaException("Objeto não encontrado");
+		
+		}
+	
+	public Comanda atualizarComanda(Comanda comanda) throws ComandaException{
+		if(comandas.contains(comanda)) {
+			int posicao = comandas.indexOf(comanda);
+			comandas.set(posicao, comanda);
+			return comandas.get(posicao);
+		}
+		
+		throw new ComandaException("Objeto não encontrado");
+	}
+	
+	}
 	
 	
 	
-	
-}
+

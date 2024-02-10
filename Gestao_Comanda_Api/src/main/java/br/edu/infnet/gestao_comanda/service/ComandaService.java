@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import br.edu.infnet.gestao_comanda.DAO.ComandaDAO;
+import br.edu.infnet.gestao_comanda.exceptions.ComandaException;
 import br.edu.infnet.gestao_comanda.model.Comanda;
 
 public class ComandaService {
@@ -17,9 +18,9 @@ public class ComandaService {
 	}
 	
 	public Comanda obterComanda() {
-		Comanda comanda = new Comanda();
+		
 		long id = comandaDao.obterProximoId();
-		comanda.setId(id);	
+		Comanda comanda = new Comanda(id);
 		return comanda;
 	}
 	
@@ -34,6 +35,13 @@ public class ComandaService {
 	public Optional<List<Comanda>> listarComandas() {
 		
 		return comandaDao.listarComandas();
+	}
+	public Comanda fecharComanda(Comanda comanda) throws ComandaException{
+		return comandaDao.fecharComanda(comanda);
+	}
+	
+	public Comanda atualizarComanda(Comanda comanda) throws ComandaException {
+		return comandaDao.atualizarComanda(comanda);
 	}
 
 }
