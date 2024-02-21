@@ -2,8 +2,9 @@ package model;
 
 public class Produto {
 	
-	public Produto() {
-		super();
-	}
+	private int codigo;
+	private String nome;
+	private Float valor;
+	private Pedido pedido;
 
 }
