@@ -1,4 +1,4 @@
-package model;
+package Trab.model;
 
 import java.util.Date;
 import java.util.List;

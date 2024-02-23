@@ -1,7 +1,8 @@
-package model;
+package Trab.model;
 
 import java.util.List;
 
+import Trab.model.vo.EmailVO;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,11 +14,16 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Produto {
+public class Cliente {
 	
-	private int codigo;
+	private String cpfCnpj; 
+	private TipoCLienteEnum tipoCliente;
+	private TipoSexoEnum sexo;
 	private String nome;
-	private Float valor;
-	private Pedido pedido;
+	private EmailVO email;
+	private List<Comanda> comandas;
+	
+	
+
 
 }

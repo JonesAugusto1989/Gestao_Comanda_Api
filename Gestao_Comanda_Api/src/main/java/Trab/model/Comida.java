@@ -1,4 +1,4 @@
-package model;
+package Trab.model;
 
 import java.util.List;
 
@@ -13,10 +13,10 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Sobremesa extends Produto{
+public class Comida extends Produto{
 	
-	private String informacao;
-	private boolean doce;
-	private float quantidade;
-
+   private float peso;
+   private boolean vegano;
+   private String ingredientes;
+   
 }

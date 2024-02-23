@@ -1,6 +1,6 @@
-package model.vo;
+package Trab.model.vo;
 
-import exception.EmailInvalidoException;
+import Trab.exception.EmailInvalidoException;
 
 public class EmailVO {
 	
