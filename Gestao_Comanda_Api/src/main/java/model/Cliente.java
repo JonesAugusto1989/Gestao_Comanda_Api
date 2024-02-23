@@ -7,17 +7,23 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import model.vo.EmailVO;
 
 @EqualsAndHashCode
 @ToString
 @NoArgsConstructor
 @Getter
 @Setter
-public class Produto {
+public class Cliente {
 	
-	private int codigo;
+	private String cpfCnpj; 
+	private TipoCLienteEnum tipoCliente;
+	private TipoSexoEnum sexo;
 	private String nome;
-	private Float valor;
-	private Pedido pedido;
+	private EmailVO email;
+	private List<Comanda> comandas;
+	
+	
+
 
 }

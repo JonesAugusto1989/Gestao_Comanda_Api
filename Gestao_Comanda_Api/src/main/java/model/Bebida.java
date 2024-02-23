@@ -13,11 +13,10 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Produto {
+public class Bebida extends Produto {
 	
-	private int codigo;
-	private String nome;
-	private Float valor;
-	private Pedido pedido;
-
+	private Boolean gelada;
+	private Float tamanho;
+	private String marca;
+	
 }
